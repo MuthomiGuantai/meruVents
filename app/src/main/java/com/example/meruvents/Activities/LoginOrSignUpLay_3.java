@@ -30,7 +30,7 @@ public class LoginOrSignUpLay_3 extends AppCompatActivity implements View.OnClic
         login_fragment_tv = findViewById(R.id.login_fragment_tv);
         fragment_container = findViewById(R.id.fragment_container);
 
-        signup_fragment_tv.setTextColor(Color.BLACK);
+        signup_fragment_tv.setTextColor(Color.parseColor("#418DDC"));
         login_fragment_tv.setTextColor(Color.GRAY);
         login_fragment_tv.setTextSize(18);
 
@@ -48,7 +48,7 @@ public class LoginOrSignUpLay_3 extends AppCompatActivity implements View.OnClic
         switch (view.getId()){
             case R.id.signup_fragment_tv:
 
-                signup_fragment_tv.setTextColor(Color.BLACK);
+                signup_fragment_tv.setTextColor(Color.parseColor("#418DDC"));
                 login_fragment_tv.setTextColor(Color.GRAY);
                 signup_fragment_tv.setTextSize(35);
                 login_fragment_tv.setTextSize(18);
@@ -61,7 +61,7 @@ public class LoginOrSignUpLay_3 extends AppCompatActivity implements View.OnClic
             case R.id.login_fragment_tv:
 
                 signup_fragment_tv.setTextColor(Color.GRAY);
-                login_fragment_tv.setTextColor(Color.BLACK);
+                login_fragment_tv.setTextColor(Color.parseColor("#418DDC"));
                 login_fragment_tv.setTextSize(35);
                 signup_fragment_tv.setTextSize(18);
 

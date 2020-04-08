@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.meruvents.R;
 
-public class Login_1_Activity extends AppCompatActivity {
+public class Otp_Verification_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_1_);
+        setContentView(R.layout.activity_otp__verification_);
     }
 }
