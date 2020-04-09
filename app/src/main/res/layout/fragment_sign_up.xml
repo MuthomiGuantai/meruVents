@@ -17,6 +17,7 @@ tools:context=".SignUpFragment">
         android:src="@drawable/logo"
         android:layout_marginTop="10dp"/>
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_email"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,6 +32,7 @@ tools:context=".SignUpFragment">
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_username"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,6 +47,7 @@ tools:context=".SignUpFragment">
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_phone"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,6 +63,7 @@ tools:context=".SignUpFragment">
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_password"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,17 +82,17 @@ tools:context=".SignUpFragment">
     <TextView
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:background="@drawable/bg_white_round_btn"
+        android:clickable="true"
+        android:id="@+id/btnsignup"
+        android:background="@drawable/buttons"
         android:layout_marginTop="20dp"
         android:text="SIGN UP"
         android:gravity="center"
-        android:textSize="18dp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"
         />
 
     <TextView
-        android:id="@+id/btnsignup"
-        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -108,7 +112,7 @@ tools:context=".SignUpFragment">
             android:layout_weight="1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/facebook_logo"/>
+            android:src="@drawable/fb"/>
 
         <ImageView
             android:layout_weight="1"

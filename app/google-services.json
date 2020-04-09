@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "468044989486",
+    "firebase_url": "https://meruvents.firebaseio.com",
+    "project_id": "meruvents",
+    "storage_bucket": "meruvents.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468044989486:android:83e64ac1313b93b9570bbf",
+        "android_client_info": {
+          "package_name": "com.example.meruvents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468044989486-6oa2pgc3f0fulr7v366d1p4du0btim47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meruvents",
+            "certificate_hash": "eace6fc77f18895c87e35b8796eb9ef8c04e9191"
+          }
+        },
+        {
+          "client_id": "468044989486-rbqhsmpgo2rqkav11nuu9a163kj9l0vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAV5Af3WipIjXokHBGVpbGBw7xzFeP_zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468044989486-rbqhsmpgo2rqkav11nuu9a163kj9l0vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
