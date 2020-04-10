@@ -23,7 +23,6 @@
                 android:text="Login"
                 android:textSize="30dp"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/signup_fragment_tv"
@@ -33,7 +32,6 @@
                 android:text="Sign Up"
                 android:textSize="30dp"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
                 android:gravity="center"/>
         </LinearLayout>
         <LinearLayout
