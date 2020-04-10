@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">meruVents</string>
+    <string name="app_name">merueVents</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook_app_id">274137233607719</string>
     <string name="fb_login_protocol_scheme">fb274137233607719</string>
+    <string name="home">home</string>
+    <string name="alarm">discover</string>
+    <string name="bread">create</string>
+    <string name="cart">notifications</string>
+    <string name="account">account</string>
 </resources>

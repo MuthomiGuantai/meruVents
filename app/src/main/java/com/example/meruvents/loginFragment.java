@@ -113,6 +113,7 @@ public class loginFragment extends Fragment {
             public void onSuccess(LoginResult loginResult) {
 
                 Log.i(TAG, "LOGIN SUCCESFUL");
+                FirebaseUser user = mAuth.getCurrentUser();
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 startActivity(intent);
             }
@@ -175,6 +176,7 @@ public class loginFragment extends Fragment {
 
                                         Intent intent = new Intent(getActivity(), MainActivity.class);
                                         Prevalent.currentonlineUser = userdata;
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     } else {
                                         loadingBar.dismiss();

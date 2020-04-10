@@ -127,10 +127,12 @@
                 android:layout_width="match_parent"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:text="continue with google"
                 android:textColor="@android:color/white"
-                android:background="@android:color/holo_red_dark"/>
+                android:background="@drawable/buttons"
+                android:backgroundTint="@android:color/holo_red_light"
+                />
         </LinearLayout>
     </LinearLayout>
 
