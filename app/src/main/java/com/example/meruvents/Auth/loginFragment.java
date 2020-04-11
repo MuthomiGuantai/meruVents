@@ -1,4 +1,4 @@
-package com.example.meruvents;
+package com.example.meruvents.Auth;
 
 
 import android.app.ProgressDialog;
@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.meruvents.MainActivity;
+import com.example.meruvents.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -114,7 +116,7 @@ public class loginFragment extends Fragment {
 
                 Log.i(TAG, "LOGIN SUCCESFUL");
                 FirebaseUser user = mAuth.getCurrentUser();
-                Intent intent = new Intent(getActivity(),MainActivity.class);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
             }
 

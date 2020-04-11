@@ -1,4 +1,4 @@
-package com.example.meruvents.Activities;
+package com.example.meruvents.Auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.example.meruvents.MainActivity;
 import com.example.meruvents.R;
-import com.example.meruvents.SignUpFragment;
-import com.example.meruvents.loginFragment;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;

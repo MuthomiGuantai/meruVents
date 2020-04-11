@@ -1,4 +1,4 @@
-package com.example.meruvents;
+package com.example.meruvents.Auth;
 
 
 import android.app.ProgressDialog;
@@ -17,7 +17,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.meruvents.Activities.Otp_Verification_Activity;
+import com.example.meruvents.Auth.Otp_Verification_Activity;
+import com.example.meruvents.MainActivity;
+import com.example.meruvents.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
