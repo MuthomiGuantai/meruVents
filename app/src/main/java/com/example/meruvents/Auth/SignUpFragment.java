@@ -144,9 +144,6 @@ public class SignUpFragment extends Fragment {
                     loadingBar.setMessage("Please wait, while we are checking your details");
                     loadingBar.setCanceledOnTouchOutside(false);
                     loadingBar.show();
-                    Intent intent = new Intent(getActivity(),Otp_Verification_Activity.class);
-                    intent.putExtra("phone",phone);
-                    startActivity(intent);
                     ValidatePhoneNumber(username, email, phone, password);
                 }
 
@@ -165,6 +162,8 @@ public class SignUpFragment extends Fragment {
                             userdataMap.put("name", name);
                             userdataMap.put("email", email);
 
+
+
                             RootRef.child("Users").child(phone).updateChildren(userdataMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
@@ -173,8 +172,8 @@ public class SignUpFragment extends Fragment {
                                                 Toast.makeText(getActivity(), "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show();
                                                 loadingBar.dismiss();
 
-                                                Intent intent = new Intent(getActivity(), MainActivity.class);
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                Intent intent = new Intent(getActivity(),Otp_Verification_Activity.class);
+                                                intent.putExtra("phone",phone);
                                                 startActivity(intent);
                                             } else {
                                                 loadingBar.dismiss();
