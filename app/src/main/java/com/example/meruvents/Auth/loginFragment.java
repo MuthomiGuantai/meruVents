@@ -136,11 +136,11 @@ public class loginFragment extends Fragment {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = ed_email.getText().toString();
+                String phone = ed_email.getText().toString();
                 String password = ed_password.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getActivity(), "Please Enter Your email", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(phone)) {
+                    Toast.makeText(getActivity(), "Please Enter Your Phone number", Toast.LENGTH_SHORT).show();
                 } else if ((TextUtils.isEmpty(password))) {
                     Toast.makeText(getActivity(), "Please Enter a Password", Toast.LENGTH_SHORT).show();
                 } else {
@@ -149,7 +149,7 @@ public class loginFragment extends Fragment {
                     loadingBar.setCanceledOnTouchOutside(false);
                     loadingBar.show();
 
-                    AllowAccessToAccount(email, password);
+                    AllowAccessToAccount(phone, password);
                 }
 
             }
