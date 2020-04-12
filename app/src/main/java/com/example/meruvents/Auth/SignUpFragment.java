@@ -3,6 +3,7 @@ package com.example.meruvents.Auth;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.example.meruvents.Auth.Otp_Verification_Activity;
 import com.example.meruvents.MainActivity;
 import com.example.meruvents.R;
+import com.example.meruvents.prevalent.Prevalent;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -260,6 +262,7 @@ public class SignUpFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             startActivity(intent);

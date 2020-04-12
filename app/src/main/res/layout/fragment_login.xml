@@ -23,29 +23,33 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingLeft="20dp"
+            android:background="@drawable/input_shape"
             android:paddingRight="20dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Ed_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:hint="Phone number">
+                android:hint="Phone number"
+                android:background="@drawable/input_shape">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:background="@drawable/input_shape"
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Ed_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Password">
+                android:hint="Password"
+                android:background="@drawable/input_shape">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
@@ -97,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:text="Login with"/>
 
         <LinearLayout
@@ -109,7 +113,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
             android:gravity="center"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="10dp">
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/login_button"
                 android:layout_weight="1"
