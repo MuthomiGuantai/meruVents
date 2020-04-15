@@ -4,10 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="merueVents"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Home"
+            android:textSize="17sp"
+            android:padding="5dp"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_marginTop="70dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,50 +38,60 @@
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="10dp"
                 android:background="@android:color/white"
-                android:padding="3dp"
+                android:padding="5dp"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="400dp"
                         android:layout_height="40dp"
                         android:text="Search events and services"
                         android:padding="10dp"
+                        android:paddingLeft="10dp"
+                        android:layout_gravity="center"
+                        android:paddingRight="10dp"
                         android:textSize="18sp"
                         android:drawableRight="@drawable/ic_action_discover"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/featured"
                 android:layout_width="match_parent"
                 android:layout_height="173dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:background="@drawable/featured">
+                    android:background="@drawable/featured"
+                    android:orientation="horizontal">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:orientation="vertical"
-                       android:layout_gravity="center"
                         android:paddingLeft="130dp">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:background="@android:color/white">
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:textColor="@android:color/black"
-                                    android:text="Featured events  (0)"/>
+                                    android:text="Featured events  (0)"
+                                    android:textColor="@android:color/black" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
                     </LinearLayout>
@@ -72,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/nightlife"
                     android:layout_width="198dp"
                     android:layout_height="173dp"
                     android:layout_marginTop="10dp"
@@ -111,6 +144,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/upcoming"
                     android:layout_width="198dp"
                     android:layout_height="173dp"
                     android:layout_marginTop="10dp"
@@ -142,6 +176,91 @@
                                         android:layout_gravity="center"
                                         android:textColor="@android:color/black"
                                         android:text="Upcoming (0)"/>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/venues"
+                    android:layout_width="198dp"
+                    android:layout_height="173dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/venue">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:paddingLeft="70dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@android:color/white">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@android:color/black"
+                                        android:text="Venues (0)"/>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/catering"
+                    android:layout_width="198dp"
+                    android:layout_height="173dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/catering">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:paddingLeft="70dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@android:color/white">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@android:color/black"
+                                        android:text="Catering (0)"/>
                                 </androidx.cardview.widget.CardView>
                             </LinearLayout>
                         </LinearLayout>
