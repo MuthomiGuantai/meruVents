@@ -117,6 +117,7 @@ public class loginFragment extends Fragment {
                 Log.i(TAG, "LOGIN SUCCESFUL");
                 FirebaseUser user = mAuth.getCurrentUser();
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
 
@@ -265,6 +266,7 @@ public class loginFragment extends Fragment {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getActivity(),MainActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 
 

@@ -131,7 +131,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/my_tickets"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:clickable="true"
                 android:layout_marginTop="15dp">
 
@@ -140,14 +140,21 @@
                     android:layout_height="wrap_content"
                     android:text="Tickets and Passes"
                     android:padding="10dp"
+                    android:paddingLeft="2dp"
                     android:textStyle="bold" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/horizontal_dashed_line"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:gravity="right"
-                    android:padding="10dp"
+                    android:padding="18dp"
                     android:text="View tickets" />
             </androidx.cardview.widget.CardView>
 

@@ -57,6 +57,8 @@ import static com.facebook.AccessTokenManager.TAG;
  */
 public class SignUpFragment extends Fragment {
 
+
+
     private static final String EMAIL = "email";
 
     TextView btnlogin;
@@ -79,6 +81,7 @@ public class SignUpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_sign_up, container, false);
+
 
         btnlogin = view.findViewById(R.id.btnsignup);
         ed_email = view.findViewById(R.id.Ed_email);
@@ -110,6 +113,7 @@ public class SignUpFragment extends Fragment {
 
                 Log.i(TAG, "LOGIN SUCCESFUL");
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
 
@@ -265,6 +269,7 @@ public class SignUpFragment extends Fragment {
 
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(getActivity(), MainActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 
 
