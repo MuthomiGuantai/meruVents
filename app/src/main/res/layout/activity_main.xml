@@ -5,11 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <FrameLayout
-        android:id="@+id/frag_container"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp"></FrameLayout>
+        android:layout_marginBottom="80dp">
+        <FrameLayout
+            android:id="@+id/frag_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></FrameLayout>
+    </LinearLayout>
+
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottom_nav"

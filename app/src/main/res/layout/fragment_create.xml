@@ -5,11 +5,41 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.CreateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Create"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:background="@android:color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create your event"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You are required to fill in the event details below "
+        android:padding="5dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/eventname"
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="flagNoExtractUi"
+            android:hint="Event name"
+            android:padding="5dp"
+            android:textColorHint="@color/colorPrimary"
+            android:background="@drawable/input_shape">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
 </FrameLayout>

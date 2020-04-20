@@ -13,6 +13,7 @@
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo_round"
+        android:hardwareAccelerated="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Auth.Otp_Verification_Activity"
@@ -29,7 +30,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="stateHidden"></activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
