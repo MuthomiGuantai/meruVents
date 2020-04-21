@@ -30,7 +30,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="adjustNothing"
+           ></activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.meruvents.Fragments.AccountFragment;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
+
         meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
         meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_action_home));
         meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_action_discover));
