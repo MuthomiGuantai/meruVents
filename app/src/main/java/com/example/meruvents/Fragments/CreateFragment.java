@@ -2,6 +2,7 @@ package com.example.meruvents.Fragments;
 
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.graphics.Rect;
 import android.os.Bundle;
 
@@ -16,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.meruvents.R;
@@ -29,6 +31,8 @@ import java.util.Locale;
  * A simple {@link Fragment} subclass.
  */
 public class CreateFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+
+    int hour,min;
 
 
     public CreateFragment() {
@@ -44,6 +48,48 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
 
 
         final Calendar myCalendar = Calendar.getInstance();
+        hour = myCalendar.get(Calendar.HOUR_OF_DAY);
+        min = myCalendar.get(Calendar.MINUTE);
+        final TextView begin = view.findViewById(R.id.starttime);
+        begin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTime(hour,min);
+            }
+
+            private void showTime(int hour, int min) {
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        begin.setText( selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, min, false);//Yes 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+            }
+        });
+        hour = myCalendar.get(Calendar.HOUR_OF_DAY);
+        min = myCalendar.get(Calendar.MINUTE);
+        final TextView endtime = view.findViewById(R.id.endtime);
+        endtime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                endTime(hour,min);
+            }
+
+            private void endTime(int hour, int min) {
+                TimePickerDialog xTimePicker;
+                xTimePicker = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        endtime.setText( selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, min, false);//Yes 24 hour time
+                xTimePicker.setTitle("Select Time");
+                xTimePicker.show();
+            }
+        });
         final TextView textView = view.findViewById(R.id.startdate);
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
