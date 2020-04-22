@@ -10,4 +10,17 @@
     <string name="bread">create</string>
     <string name="cart">notifications</string>
     <string name="account">account</string>
+    <string-array name="Spinner_items">
+        <item>Select a category</item>
+        <item>Business</item>
+        <item>Music and Concerts</item>
+        <item>Film and Media</item>
+        <item>Performing and Visual Arts</item>
+        <item>Health and Medical</item>
+        <item>Fitness and Sports</item>
+        <item>Travel and Outdoor</item>
+        <item>Foods and Drinks</item>
+        <item>Charity and Community</item>
+        <item>Entertainment and Nightlife</item>
+    </string-array>
 </resources>
