@@ -202,13 +202,13 @@
                 />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:id="@+id/addticket"
             android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="2dp"
             android:layout_marginTop="15dp">
             <TextView
+                android:id="@+id/addticket"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:padding="5dp"
