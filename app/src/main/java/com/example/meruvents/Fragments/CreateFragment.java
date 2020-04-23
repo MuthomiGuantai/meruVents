@@ -11,6 +11,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -24,6 +25,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -49,7 +51,7 @@ import static android.app.Activity.RESULT_OK;
 public class CreateFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
 
-    String CategoryName, Name, startDate, startTime, endDate, endTime, category, Location;;
+    String CategoryName, Name, startDate, startTime, endDate, endTime, Location, bure, closed ;;
 
     DatabaseReference eventsRef;
 
@@ -57,11 +59,13 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
 
     int GalleryPick = 1;
 
+    Switch free,open;
+
     Uri ImageUri;
 
     ProgressDialog loadingBar;
 
-    TextView ticket;
+    CardView ticket;
 
     StorageReference eventImageRef;
 
@@ -79,6 +83,8 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
         loadingBar = new ProgressDialog(getActivity());
         eventsRef = FirebaseDatabase.getInstance().getReference().child("Events");
         ticket = view.findViewById(R.id.addticket);
+        free = view.findViewById(R.id.free);
+        open = view.findViewById(R.id.pevent);
         final EditText editText = view.findViewById(R.id.eventName);
         final EditText location = view.findViewById(R.id.eventLocation);
         Button button = view.findViewById(R.id.submitevent);
@@ -206,12 +212,23 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(free.isChecked())
+                    bure = free.getTextOn().toString();
+                else
+                    bure = free.getTextOff().toString();
+
+                if (open.isChecked())
+                    closed = open.getTextOn().toString();
+                else
+                    closed = open.getTextOff().toString();
+
                 Name = editText.getText().toString();
                 startDate = textView.getText().toString();
                 endDate = end.getText().toString();
                 startTime = begin.getText().toString();
                 endTime = endtime.getText().toString();
                 Location = location.getText().toString();
+
 
                 if (TextUtils.isEmpty(Name)) {
                     Toast.makeText(getActivity(), "Please provide an event name...", Toast.LENGTH_SHORT).show();
@@ -235,6 +252,8 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
                 eventMap.put("startTime", startTime);
                 eventMap.put("endTime", endTime);
                 eventMap.put("location", Location);
+                eventMap.put("type", bure);
+                eventMap.put("status", closed);
 
                 eventsRef.child(Name).updateChildren(eventMap)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {

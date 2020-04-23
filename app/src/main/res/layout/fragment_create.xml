@@ -168,6 +168,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textOn="free"
+                android:textOff="paid"
                 android:layout_marginLeft="200dp"/>
         </LinearLayout>
         <LinearLayout
@@ -185,6 +187,8 @@
                 android:id="@+id/pevent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textOn="private"
+                android:textOff="public"
                 android:layout_weight="1"
                 android:layout_marginLeft="181dp"/>
         </LinearLayout>
@@ -203,12 +207,12 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:visibility="gone"
+            android:id="@+id/addticket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="2dp"
             android:layout_marginTop="15dp">
             <TextView
-                android:id="@+id/addticket"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:padding="5dp"
