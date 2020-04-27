@@ -25,6 +25,8 @@ import io.paperdb.Paper;
 public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
     private DatabaseReference notificationsRef;
+    public static final String Titletobeput = "title";
+    public static final String Messagetobeput = "message";
 
 
     @Override
@@ -53,8 +55,6 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
 
     public void showNotification(String title,String message){
-        Paper.book().write(Prevalent.NotificationTitleKey, title);
-        Paper.book().write(Prevalent.NotificationMessageKey, message);
         Intent intent=new Intent(this, MainActivity.class);
         String channel_id="web_app_channel";
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
