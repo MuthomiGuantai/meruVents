@@ -174,7 +174,7 @@
                 android:layout_weight="1"
                 android:textOn="free"
                 android:textOff="paid"
-                android:layout_marginLeft="200dp"/>
+                android:layout_marginLeft="190dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -194,7 +194,7 @@
                 android:textOn="private"
                 android:textOff="public"
                 android:layout_weight="1"
-                android:layout_marginLeft="181dp"/>
+                android:layout_marginLeft="171dp"/>
         </LinearLayout>
     </LinearLayout>
         <LinearLayout
@@ -223,9 +223,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:text="ADD IMAGE"
-                android:textSize="15sp"
                 android:padding="5dp"
-                android:layout_marginLeft="181dp"
+                android:layout_marginLeft="140dp"
                 android:textColor="@color/colorPrimary"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
