@@ -1,6 +1,7 @@
 package com.example.meruvents.Fragments;
 
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
@@ -21,12 +22,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.meruvents.MainActivity;
 import com.example.meruvents.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -46,6 +49,8 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class CreateFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+
+    TextView addticket;
 
 
     String CategoryName, Name, startDate, startTime, endDate, endTime, Location, bure, closed ;;
@@ -79,7 +84,8 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_create, container, false);
         loadingBar = new ProgressDialog(getActivity());
         eventsRef = FirebaseDatabase.getInstance().getReference().child("Events");
-        ticket = view.findViewById(R.id.addticket);
+        addticket = view.findViewById(R.id.addticket);
+        ticket = view.findViewById(R.id.ticko);
         free = view.findViewById(R.id.free);
         open = view.findViewById(R.id.pevent);
         final EditText editText = view.findViewById(R.id.eventName);
@@ -287,6 +293,45 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
 
                             }
                         });
+
+            }
+        });
+        addticket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogue();
+            }
+
+            private void showDialogue() {
+                final AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                View nView = getLayoutInflater().inflate(R.layout.create_ticket, null);
+
+                final EditText tname = (EditText)nView.findViewById(R.id.ticketName);
+                final EditText tdescription = (EditText)nView.findViewById(R.id.ticketDescription);
+                final EditText price = (EditText)nView.findViewById(R.id.price);
+                final EditText quantity = (EditText)nView.findViewById(R.id.quantity);
+                final EditText minimum = (EditText)nView.findViewById(R.id.minimum);
+                final EditText maximum = (EditText)nView.findViewById(R.id.maximum);
+                final Button Sticket = (Button)nView.findViewById(R.id.submiticket);
+                final Switch deadline = (Switch)nView.findViewById(R.id.deadline);
+                final TextView dDate = (TextView)nView.findViewById(R.id.lastDate);
+                final TextView dtime = (TextView)nView.findViewById(R.id.lastTime);
+                final ImageView close = (ImageView)nView.findViewById(R.id.close);
+
+
+                alert.setView(nView);
+
+                final AlertDialog alertDialog = alert.create();
+                alertDialog.setCanceledOnTouchOutside(false);
+
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog.show();
+
 
             }
         });
