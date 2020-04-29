@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -70,6 +71,7 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
     CardView ticket;
 
     StorageReference eventImageRef;
+    LinearLayout dead;
 
 
     public CreateFragment() {
@@ -317,12 +319,29 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
                 final TextView dDate = (TextView)nView.findViewById(R.id.lastDate);
                 final TextView dtime = (TextView)nView.findViewById(R.id.lastTime);
                 final ImageView close = (ImageView)nView.findViewById(R.id.close);
+                final LinearLayout dead = (LinearLayout)nView.findViewById(R.id.editDead);
 
 
                 alert.setView(nView);
 
                 final AlertDialog alertDialog = alert.create();
                 alertDialog.setCanceledOnTouchOutside(false);
+
+                deadline.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Switch btn=(Switch)view;
+                        boolean switchChecked = btn.isChecked();
+
+                        if (btn.isChecked()) {
+                            btn.setChecked(true);
+                            dead.setVisibility(View.VISIBLE);
+                        } else {
+                            btn.setChecked(false);
+                        }
+
+                    }
+                });
 
                 close.setOnClickListener(new View.OnClickListener() {
                     @Override

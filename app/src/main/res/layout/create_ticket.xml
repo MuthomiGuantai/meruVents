@@ -197,15 +197,15 @@
             android:id="@+id/lastDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Deadline date"
+            android:text="Date"
             android:padding="5dp"
             />
         <TextView
             android:id="@+id/lastTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:text="Deadline time"
+            android:layout_marginLeft="190dp"
+            android:text="Time"
             />
     </LinearLayout>
 </LinearLayout>
