@@ -1,7 +1,7 @@
 package com.example.meruvents.models;
 
 public class Users {
-    private String username, phone, password,email;
+    private String username, phone, password, email, token;
 
     public Users()
     {
@@ -13,6 +13,7 @@ public class Users {
         this.phone = phone;
         this.password = password;
         this.email = email;
+        this.token = token;
     }
 
     public String getName() {
@@ -46,5 +47,8 @@ public class Users {
         this.email = email;
     }
 
+    public void setToken(String token){
+        this.token = token;
+    }
 
 }

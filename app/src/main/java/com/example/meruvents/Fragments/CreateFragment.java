@@ -338,6 +338,7 @@ public class CreateFragment extends Fragment implements AdapterView.OnItemSelect
                             dead.setVisibility(View.VISIBLE);
                         } else {
                             btn.setChecked(false);
+                            dead.setVisibility(View.GONE);
                         }
 
                     }

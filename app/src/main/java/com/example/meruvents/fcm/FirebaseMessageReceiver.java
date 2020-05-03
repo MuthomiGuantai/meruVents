@@ -10,13 +10,18 @@ import android.net.Uri;
 import android.os.Build;
 import android.widget.RemoteViews;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.example.meruvents.MainActivity;
 import com.example.meruvents.R;
 import com.example.meruvents.prevalent.Prevalent;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -83,6 +88,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
             notificationChannel.setSound(uri,null);
             notificationManager.createNotificationChannel(notificationChannel);
         }
+
 
         notificationManager.notify(0,builder.build());
     }

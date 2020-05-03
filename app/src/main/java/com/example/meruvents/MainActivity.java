@@ -1,5 +1,6 @@
 package com.example.meruvents;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -12,9 +13,21 @@ import com.example.meruvents.Fragments.CreateFragment;
 import com.example.meruvents.Fragments.DiscoverFragment;
 import com.example.meruvents.Fragments.HomeFragment;
 import com.example.meruvents.Fragments.NotificationsFragment;
+import com.example.meruvents.models.Token;
+import com.example.meruvents.models.Users;
+import com.example.meruvents.prevalent.Prevalent;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static final String NODE_USERS = "users";
+    private FirebaseAuth mAuth;
     MeowBottomNavigation meo;
     private final static int ID_HOME=1;
     private final static int ID_DISCOVER=2;
@@ -26,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
 
@@ -68,5 +83,27 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, select_fragment).commit();
             }
         });
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        String token = task.getResult().getToken();
+                        saveToken(token);
+                    }
+
+                    private void saveToken(String token) {
+                        String email = Prevalent.currentonlineUser.getEmail();
+                        Token token1 = new Token(email, token);
+
+                        DatabaseReference dbusers = FirebaseDatabase.getInstance().getReference(NODE_USERS);
+                        dbusers.child("token")
+                                .setValue(token1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                            }
+                        });
+                    }
+                });
     }
 }
